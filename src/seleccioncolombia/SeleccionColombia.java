@@ -11,20 +11,7 @@ package seleccioncolombia;
  */
 public class SeleccionColombia {
     
-    
-    
-    public static void main(String[] args) {
-        // TODO code application logic here
-    
-                
-         
-    
-    }
-    
-        
-    static class Equipo{
-        
-        public enum Delanteros{
+    public enum Delanteros{
             //Apellido, Efectividad, Goles por partido
             FALCAO("85%", 3),
             VACCA("75%", 2),
@@ -46,8 +33,7 @@ public class SeleccionColombia {
                 return goles;
             }
         }
-    
-        public enum Volantes{
+    public enum Volantes{
             //Apellido, Efectividad, Goles por partido
             CUADRADO(15, 2),
             JAMES(25, 3),
@@ -69,28 +55,41 @@ public class SeleccionColombia {
                 return goles;
             }
         }
+    public enum Defensas{
+        //Apellido, Efectividad, Goles por partido
+        MINA(15),
+        ARIAS(25),
+        MOJICA(25),
+        SANCHEZ(5);
+        private final int kilometros;
+
+        private Defensas(int kilometros) {
+            this.kilometros = kilometros;
+
+        }
+
+        public int getKilometros() {
+            return kilometros;
+        }
+    }
     
-        public enum Defensas{
-            //Apellido, Efectividad, Goles por partido
-            MINA(15),
-            ARIAS(25),
-            MOJICA(25),
-            SANCHEZ(5);
-            private final int kilometros;
-
-            private Defensas(int kilometros) {
-                this.kilometros = kilometros;
-
-            }
-
-            public int getKilometros() {
-                return kilometros;
-            }
+    class EquipoPartido{
+        
+        void imprimirEquipo(){
+            System.out.println("Defensas: "+Defensas.ARIAS);
+            System.out.println("Defensas: "+Defensas.MINA);
+            System.out.println("Volantes: "+Volantes.BARRIOS);
+            System.out.println("Volantes: "+Volantes.CUADRADO);
+            System.out.println("Delanteros: "+Delanteros.BORJA);
+            System.out.println("Delanteros: "+Delanteros.MURIEL);
         }
     }   
    
-    
-    
-    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        SeleccionColombia seleccionColombia = new SeleccionColombia();
+        SeleccionColombia.EquipoPartido equipoPartido = seleccionColombia.new EquipoPartido();
+        equipoPartido.imprimirEquipo();
+    }
     
 }
